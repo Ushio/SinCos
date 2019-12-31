@@ -31,6 +31,11 @@ public:
         _sinT = newSin;
         _cosT = newCos;
     }
+
+    void setDeltaT(float stepThetaT) {
+        _sinDeltaT = std::sin(stepThetaT);
+        _cosDeltaT = std::cos(stepThetaT);
+    }
 private:
     float _sinDeltaT = 0.0f;
     float _cosDeltaT = 0.0f;
@@ -80,7 +85,6 @@ int main() {
                 float x = circle.cos();
                 float y = circle.sin();
                 DrawSphere({ x, y, 0 }, 0.01f, { 255 - i2c(i), 128, i2c(i) });
-
                 circle.step();
             }
         }
